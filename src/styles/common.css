@@ -1,0 +1,12 @@
+.bg{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.flex{
+  display: flex;
+}
+.flex-c{
+  display: flex;
+  flex-direction: column;
+}
