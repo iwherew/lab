@@ -45,7 +45,7 @@
   }
   .title{
     width: 650px;
-    margin-top: 90px;
+    margin-top: 100px;
     text-align: center;
     font-size: 40px;
     color: #F54785;
