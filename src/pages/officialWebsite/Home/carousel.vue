@@ -1,12 +1,12 @@
 <template>
 <!-- 首页轮播 -->
   <div class="block">
-    <el-carousel height="590px" interval=5000>
+    <el-carousel height="590px" :interval='5000'>
       <el-carousel-item v-for="(item, index) in carouselItems" :key="index">
         <div class="bg carousel-item flex-c" :style="{'backgroundImage': 'url('+item.img+')'}">
           <div class="inner-box">
-            <div class="title">{{item.title}}</div>
-            <div class="context">{{item.context}}</div>
+            <div class="title one-line">{{item.title}}</div>
+            <div class="context four-lines">{{item.context}}</div>
           </div>
         </div>
       </el-carousel-item>
@@ -57,19 +57,11 @@
     color: #00D2D4;
     margin: 65px 100px 30px 180px;
     font-weight: bold;
-    white-space: nowrap;/*不允许换行*/
-    overflow: hidden;/*超出隐藏*/
-    text-overflow: ellipsis;/*文本超出三点代替*/
   }
   .context{
     font-size: 24px;
     color: #FFFFFF;
     margin: 0 100px 30px 180px;
     line-height:40px;
-    overflow: hidden;  //隐藏多余行数
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4; //规定显示几行，其余行数用小数点代替
-    -webkit-box-orient: vertical;  //规定为垂直方向排列
   }
 </style>

@@ -10,3 +10,34 @@
   display: flex;
   flex-direction: column;
 }
+.one-line{
+  white-space: nowrap;/*不允许换行*/
+  overflow: hidden;/*超出隐藏*/
+  text-overflow: ellipsis;/*文本超出三点代替*/
+}
+
+.two-lines{
+  overflow: hidden; /*隐藏多余行数*/
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /*规定显示几行，其余行数用小数点代替*/
+  -webkit-box-orient: vertical;  /*规定为垂直方向排列*/
+}
+
+.three-lines{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.four-lines{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+
