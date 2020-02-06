@@ -54,7 +54,7 @@
         margin: 5px 25px;
         width: 60px;
         height: 60px;
-        background-image: url("../images/home/school-logo.png");
+        background-image: url("../images/officialWebsite/home/school-logo.png");
       }
       .school-name{
         color: #003B90;
@@ -83,7 +83,7 @@
       width: 50px;
       border-radius: 50%;
       &.no-avatar{
-        background-image: url("../images/home/yonghu.png");
+        background-image: url("../images/officialWebsite/home/yonghu.png");
       }
     }
   }

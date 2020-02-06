@@ -1,13 +1,14 @@
 <template>
   <div class="home">
     <lab-nav/>
-    111
+    <carousel/>
   </div>
 </template>
 <script>
   import labNav from "../../../components/labNav";
+  import carousel from "./carousel";
   export default {
-    components: {labNav},
+    components: {labNav,carousel},
   }
 </script>
 <style scoped lang="less">
