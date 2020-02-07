@@ -14,27 +14,27 @@
   </div>
 </template>
 <script>
-  import carousel01 from '../../../images/officialWebsite/home/carousel01.jpg'
-  import carousel02 from '../../../images/officialWebsite/home/carousel02.jpg'
-  import carousel03 from '../../../images/officialWebsite/home/carousel03.jpg'
+  import carousel05 from '../../../images/officialWebsite/home/carousel05.jpg'
+  import carousel06 from '../../../images/officialWebsite/home/carousel06.jpg'
+  import carousel07 from '../../../images/officialWebsite/home/carousel07.jpg'
   export default {
     data(){
       return{
         carouselItems:[
           {
-            img: carousel01,
+            img: carousel05,
             title: '开放的实验平台',
             context: '教师和学生可以在任何时间，通过教室、实验室或其他地方的互联网接入点都能进行实验'
           },
           {
-            img: carousel02,
-            title: '不开放的实验平台不开放的实验平台不开放的实验平台',
-            context: '在html中可以通过设置CSS中的line-height属性来改变行间距,可以给line-height设置的值可以是数字,像素大小或者是百分比,但是不可以设置成负值,line-height的值表示的是两行文字之间基线的距离。'
+            img: carousel06,
+            title: '领先的信息存储团队',
+            context: '研究新一代磁、光、电存储技术，光致磁变记录新原理，大数据长效存储系统，新型存储器控制器关键算法'
           },
           {
-            img: carousel03,
-            title: '这是标题',
-            context: '这是内容'
+            img: carousel07,
+            title: '安全的传输系统',
+            context: '解决大量移动智能终端和大尺度卫星链路的网络信息传输易被窃听、篡改和假冒的问题。'
           },
         ]
       }

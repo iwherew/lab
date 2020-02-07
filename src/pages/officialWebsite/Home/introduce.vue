@@ -31,12 +31,12 @@
   }
   .introduce-item{
     width: 100%;
-    height: 480px;
+    height: 600px;
     background: #FFFFFF;
   }
   .img{
     width: 50%;
-    height: 480px;
+    height: 600px;
   }
   .context-box{
     width: 50%;
@@ -53,7 +53,6 @@
   }
   .context{
     width: 580px;
-    margin-top: 40px;
     margin-bottom: 50px;
     font-size: 20px;
     color: #101010;
