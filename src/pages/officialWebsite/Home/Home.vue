@@ -6,6 +6,7 @@
     <research/>
     <awards/>
     <direction/>
+    <contact/>
   </div>
 </template>
 <script>
@@ -15,8 +16,9 @@
   import research from "./research";
   import awards from "./awards";
   import direction from "./direction";
+  import contact from "../../../components/contact";
   export default {
-    components: {labNav,carousel,introduce,research,awards,direction},
+    components: {labNav,carousel,introduce,research,awards,direction,contact},
   }
 </script>
 <style scoped lang="less">
