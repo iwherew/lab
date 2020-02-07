@@ -35,9 +35,9 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    justify-content: space-evenly;
   }
   .header{
+    margin-top: 50px;
     font-weight: bold;
     font-size: 40px;
     color: #00D2D4;
@@ -47,9 +47,10 @@
     font-weight: bold;
     font-size: 26px;
     color: #FFFFFF;
-    margin-left: 120px;
+    margin: 40px 120px;
   }
   .awards-item{
+    margin: 20px 0;
     align-items: center;
   }
   .icon-bg{

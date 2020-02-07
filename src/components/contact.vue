@@ -31,7 +31,7 @@
           },
           {
             icon: phone,
-            text: '0751-66655651'
+            text: '16655551111'
           },
         ]
       }
@@ -49,7 +49,7 @@
     height: 100%;
     background: rgba(0,0,0,0.67);
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   .header{
     font-size: 24px;

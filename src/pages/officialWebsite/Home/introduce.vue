@@ -40,12 +40,13 @@
   }
   .context-box{
     width: 50%;
+    padding-top: 100px;
     align-items: center;
-    justify-content: space-evenly;
   }
   .title{
     width: 650px;
     margin-top: 100px;
+    margin-bottom: 50px;
     text-align: center;
     font-size: 40px;
     color: #F54785;
