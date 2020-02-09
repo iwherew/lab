@@ -13,7 +13,6 @@
         <el-menu :default-active="activeIndex"
                  mode="horizontal"
                  active-text-color="#F54785"
-                 @select="handleSelect"
                  router
         >
           <el-menu-item index="/">首页</el-menu-item>
@@ -29,19 +28,20 @@
 
 </template>
 <script>
-  import {mapMutations} from 'vuex'
+  // import {mapMutations} from 'vuex'
   export default {
-    methods:{
-      ...mapMutations([
-        'updatePage'
-      ]),
-      handleSelect(key, keyPath) {
-        this.updatePage(key)
-      }
-    },
+    // methods:{
+    //   ...mapMutations([
+    //     'updatePage'
+    //   ]),
+    //   handleSelect(key, keyPath) {
+    //     this.updatePage(key)
+    //   }
+    // },
     computed:{
       activeIndex(){
-        return this.$store.state.page
+        // return this.$store.state.page
+        return this.$route.path
       }
     },
   }
