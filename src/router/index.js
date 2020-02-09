@@ -16,10 +16,11 @@ export default new Router({
     {
       path: '/notice',
       meta: {title: '通知公告'},
-      component: resolve => require(['../pages/officialWebsite/Noitce/Notice'], resolve),
+      component: resolve => require(['../pages/officialWebsite/Notice/Notice'], resolve),
       children: [
         {
-          path:'noticeDetail'
+          path:'noticeDetail',
+          component: resolve => require(['../pages/officialWebsite/Notice/NoticeDetail'], resolve),
         }
       ],
     },
