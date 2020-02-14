@@ -10,13 +10,32 @@ export default new Router({
   routes: [
     {
       path: '/',
-      meta: {title: '首页'},
-      component: resolve => require(['../pages/officialWebsite/Home/Home'], resolve),
-    },
-    {
-      path: '/notice',
-      meta: {title: '通知公告'},
-      component: resolve => require(['../pages/officialWebsite/Notice/Notice'], resolve),
+      redirect: 'home',
+      component: resolve => require(['../pages/officialWebsite/Index/Index'], resolve),
+      children: [
+        {
+          path: 'home',
+          meta: {title: '首页'},
+          component: resolve => require(['../pages/officialWebsite/Home/Home'], resolve),
+        },
+        {
+          path: 'notice',
+          component: resolve => require(['../pages/officialWebsite/Notice/Notice'], resolve),
+          children: [
+            {
+              path: '',
+              meta: {title: '通知公告'},
+              component: resolve => require(['../pages/officialWebsite/Notice/noticeLists'], resolve),
+            },
+            {
+              path: 'noticeDetail',
+              meta: {title: '通知详情'},
+              component: resolve => require(['../pages/officialWebsite/Notice/NoticeDetail'], resolve),
+            },
+          ]
+        },
+
+      ]
     },
   ]
 })

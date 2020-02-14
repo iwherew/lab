@@ -15,7 +15,7 @@
                  active-text-color="#F54785"
                  router
         >
-          <el-menu-item index="/">首页</el-menu-item>
+          <el-menu-item index="/home">首页</el-menu-item>
           <el-menu-item index="/notice">通知公告</el-menu-item>
           <el-menu-item index="/department">部门介绍</el-menu-item>
           <el-menu-item index="/member">成员介绍</el-menu-item>
@@ -28,19 +28,9 @@
 
 </template>
 <script>
-  // import {mapMutations} from 'vuex'
   export default {
-    // methods:{
-    //   ...mapMutations([
-    //     'updatePage'
-    //   ]),
-    //   handleSelect(key, keyPath) {
-    //     this.updatePage(key)
-    //   }
-    // },
     computed:{
       activeIndex(){
-        // return this.$store.state.page
         return this.$route.path
       }
     },
@@ -96,6 +86,9 @@
     .el-menu--horizontal>.el-menu-item{
       height: 70px;
       line-height: 70px;
+    }
+    .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+      color: #F54785;
     }
   }
 </style>

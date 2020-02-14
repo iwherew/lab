@@ -7,7 +7,6 @@ import getters from './getters'
 Vue.use(Vuex)
 
 const state = {
-  page:'/'
 }
 
 export default new Vuex.Store({

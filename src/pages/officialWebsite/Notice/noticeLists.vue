@@ -58,6 +58,7 @@
                :key="index"
                @mouseenter="changeActive($event)"
                @mouseleave="removeActive($event)"
+               @click="goToDetail(item.id)"
           >
             <div class="square"></div>
             <div class="title one-line">{{item.title}}</div>
@@ -80,34 +81,42 @@
       return{
         noticeList:[
           {
+            id: 118,
             title: '学术报告：THz for Smart and Safe Future: a special focus on Towards Tbit THz wireless communications',
             time: 1581178630478
           },
           {
+            id: 117,
             title: '讲座：脑机接口在康复与辅助系统中的应用',
             time: 1581005604000
           },
           {
+            id: 116,
             title: '学术讲座：统计方法前沿研究',
             time: 1581005604000
           },
           {
+            id: 115,
             title: '院士讲座：创新是科学的灵魂',
             time: 1580919204000
           },
           {
+            id: 114,
             title: '高雅艺术进校园——中国爱乐乐团来校演出',
             time: 1580919204000
           },
           {
+            id: 113,
             title: '学术交流与科研评价的现状与挑战',
             time: 1580919204000
           },
           {
+            id: 112,
             title: '召开新时代网络意识形态安全与高校思想政治教育学术研讨会',
             time: 1580832804000
           },
           {
+            id: 111,
             title: '新冠病毒潜在中间宿主或为穿山甲',
             time: 1580832804000
           },
@@ -209,6 +218,10 @@
           cb(results);
         }, 2000);
       },
+      goToDetail(id){
+        let routeData = this.$router.resolve({ path: '/notice/noticeDetail' ,query:{id:id}});
+        window.open(routeData.href, '_blank');
+      }
     },
     mounted() {
       this.searchList = this.loadAll();
