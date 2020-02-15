@@ -10,6 +10,7 @@
             <div class="circle"
                  @mouseenter="changeActive($event)"
                  @mouseleave="removeActive($event)"
+                 @click="goToNoticeEdit"
             >
               <div class="icon bg add"></div>
             </div>
@@ -221,6 +222,9 @@
       goToDetail(id){
         let routeData = this.$router.resolve({ path: '/notice/noticeDetail' ,query:{id:id}});
         window.open(routeData.href, '_blank');
+      },
+      goToNoticeEdit(){
+        this.$router.push('/notice/noticeEdit')
       }
     },
     mounted() {

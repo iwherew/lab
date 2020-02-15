@@ -32,6 +32,11 @@ export default new Router({
               meta: {title: '通知详情'},
               component: resolve => require(['../pages/officialWebsite/Notice/NoticeDetail'], resolve),
             },
+            {
+              path: 'noticeEdit',
+              meta: {title: '通知编辑'},
+              component: resolve => require(['../pages/officialWebsite/Notice/NoticeEdit'], resolve),
+            },
           ]
         },
 
