@@ -7,16 +7,16 @@
             <el-checkbox :indeterminate="isIndeterminate" border v-model="checkedAll" @change="handleCheckAllChange">
               全选
             </el-checkbox>
-            <el-checkbox-group v-model="checkedDepartment" size="medium" @change="handleCheckedCitiesChange">
+            <el-checkbox-group v-model="context.checkedDepartment" size="medium" @change="handleCheckedCitiesChange">
               <el-checkbox v-for="(item,index) in allDepartment" border :label="item" :key="index"></el-checkbox>
             </el-checkbox-group>
           </el-form-item>
           <el-form-item label="文章标题：">
-            <el-input v-model="title" placeholder="请输入文章标题"></el-input>
+            <el-input v-model="context.title" placeholder="请输入文章标题"></el-input>
           </el-form-item>
           <el-form-item label="正文内容：">
             <div class="white">
-              <editor v-model="detail" :isClear="isClear" @change="change"></editor>
+              <editor v-model="context.detail" :isClear="isClear" @change="change"></editor>
             </div>
           </el-form-item>
         </el-form>
@@ -30,7 +30,7 @@
           :on-remove="handleRemove"
           :before-remove="beforeRemove"
           multiple
-          :file-list="fileList">
+          :file-list="context.fileList">
           <el-button type="primary">点击上传文件</el-button>
         </el-upload>
       </div>
@@ -42,22 +42,35 @@
 
   export default {
     components: {Editor},
+    prop:['contextProp'],
     data() {
       return {
         isClear: false,
-        detail: null,
-        allDepartment: ['后勤部', '武装部', '财政部'],
-        checkedDepartment: ['后勤部', '武装部', '财政部'],
-        checkedAll: true,
+        allDepartment: [
+          '语音识别部',
+          '图像处理部',
+          '统计分析部',
+          '算法部'
+        ],
+        checkedAll: false,
         isIndeterminate: false, //全选框不确定状态
-        title: null,
-        fileList: [{
-          name: 'food.jpeg',
-          url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-        }, {
-          name: 'food2.jpeg',
-          url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-        }]
+        context: {
+          id: null,
+          title: null,
+          author: null,
+          createTime: null,
+          visitorVolume: null,
+          detail: ``,
+          fileList: [{
+            name: `关于公布学校管理服务部门职责的通知 杭电人【2019】 85号.pdf`,
+            url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          }, {
+            name: `网络开学工作.pdf`,
+            url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          }],
+          checkedDepartment: [
+          ],
+        },
       }
     },
     methods: {
@@ -65,7 +78,7 @@
         console.log(val)
       },
       handleCheckAllChange(val) {
-        this.checkedDepartment = val ? this.allDepartment : [];
+        this.context.checkedDepartment = val ? this.allDepartment : [];
         this.isIndeterminate = false;
       },
       handleCheckedCitiesChange(value) {
@@ -82,7 +95,7 @@
       beforeRemove(file, fileList) {
         return this.$confirm(`确定移除 ${ file.name }？`);
       }
-    }
+    },
   }
 </script>
 <style scoped lang="less">
@@ -128,6 +141,9 @@
     }
     .el-button--success{
       margin-bottom: 30px;
+    }
+    .el-upload-list__item-name{
+      width: 200px;
     }
   }
 </style>
