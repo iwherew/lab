@@ -39,7 +39,11 @@ export default new Router({
             },
           ]
         },
-
+        {
+          path: 'department',
+          meta: {title: '部门介绍'},
+          component: resolve => require(['../pages/officialWebsite/Department/department'], resolve),
+        },
       ]
     },
   ]

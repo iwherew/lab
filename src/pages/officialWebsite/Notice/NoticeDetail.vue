@@ -313,6 +313,9 @@
             .square{
               background: #F54785;
             }
+            .title{
+              font-weight: bold;
+            }
           }
         }
       }

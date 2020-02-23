@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap flex-c">
+  <div class="wrap flex-c notice-lists">
     <div class="header">通知公告</div>
     <div class="content flex">
       <div class="content-left bg"></div>
@@ -335,9 +335,19 @@
             .square{
               background: #F54785;
             }
+            .title, .time{
+              font-weight: bold;
+            }
           }
         }
       }
+    }
+  }
+</style>
+<style lang="less">
+  .notice-lists{
+    .el-pagination.is-background .el-pager li{
+      background-color: #FFFFFF;
     }
   }
 </style>
