@@ -1,8 +1,8 @@
 <template>
-  <div class="wrap flex-c notice-lists">
-    <div class="header">通知公告</div>
-    <div class="content flex">
-      <div class="content-left bg"></div>
+  <div class="wrap flex-c notice-lists bg">
+    <div class="header">{{type.title}}</div>
+    <div class="content flex" :style="{'flexDirection':flexDirection}">
+      <div class="content-left bg" :style="{'backgroundImage':'url('+type.imageUrl+')'}"></div>
       <div class="content-right flex-c">
         <div class="btn-group flex">
           <div class="black"></div>
@@ -77,7 +77,23 @@
 </template>
 <script>
   import {transformTime} from '../../../utils/func'
+  import schoolImage from '../../../images/officialWebsite/notice/school.jpg'
   export default {
+    props:{
+      type: {
+        type: Object,
+        default: ()=>{
+          return{
+            title: '通知公告',
+            imageUrl: schoolImage,
+          }
+        },
+      },
+      flexDirection:{
+        type: String,
+        default:'row'
+      }
+    },
     data(){
       return{
         noticeList:[
@@ -220,11 +236,11 @@
         }, 2000);
       },
       goToDetail(id){
-        let routeData = this.$router.resolve({ path: '/notice/noticeDetail' ,query:{id:id}});
+        let routeData = this.$router.resolve({ path: '/notice/articleDetail' ,query:{id:id}});
         window.open(routeData.href, '_blank');
       },
       goToNoticeEdit(){
-        this.$router.push('/notice/noticeEdit')
+        this.$router.push('/notice/articleEdit')
       }
     },
     mounted() {
@@ -237,14 +253,14 @@
     width: 100%;
     padding: 70px 0;
     align-items: center;
-    background: #F7F7F7;
+    background-image: url("../../../images/officialWebsite/notice/background01.jpg");
     .header{
       font-size: 30px;
       color: #003B90;
       font-weight: bold;
       border-bottom: 5px solid #F54785;
       padding-bottom: 20px;
-      margin-bottom: 70px;
+      margin-bottom: 85px;
     }
     .content{
       width: 1300px;
@@ -253,7 +269,6 @@
         width: 555px;
         height: 430px;
         border-radius: 20px;
-        background-image: url("../../../images/officialWebsite/notice/school.jpg");
       }
       .content-right{
         width: 600px;

@@ -25,17 +25,17 @@ export default new Router({
             {
               path: '',
               meta: {title: '通知公告'},
-              component: resolve => require(['../pages/officialWebsite/Notice/noticeLists'], resolve),
+              component: resolve => require(['../pages/officialWebsite/common/articleLists'], resolve),
             },
             {
-              path: 'noticeDetail',
-              meta: {title: '通知详情'},
-              component: resolve => require(['../pages/officialWebsite/Notice/NoticeDetail'], resolve),
+              path: 'articleDetail',
+              meta: {title: '文章详情'},
+              component: resolve => require(['../pages/officialWebsite/common/articleDetail'], resolve),
             },
             {
-              path: 'noticeEdit',
-              meta: {title: '通知编辑'},
-              component: resolve => require(['../pages/officialWebsite/Notice/NoticeEdit'], resolve),
+              path: 'articleEdit',
+              meta: {title: '文章编辑'},
+              component: resolve => require(['../pages/officialWebsite/common/articleEdit'], resolve),
             },
           ]
         },
@@ -43,6 +43,16 @@ export default new Router({
           path: 'department',
           meta: {title: '部门介绍'},
           component: resolve => require(['../pages/officialWebsite/Department/department'], resolve),
+        },
+        {
+          path: 'member',
+          meta: {title: '成员介绍'},
+          component: resolve => require(['../pages/officialWebsite/Member/member'], resolve),
+        },
+        {
+          path: 'recruitment',
+          meta: {title: '招生信息'},
+          component: resolve => require(['../pages/officialWebsite/Recruitment/recruitment'], resolve),
         },
       ]
     },
