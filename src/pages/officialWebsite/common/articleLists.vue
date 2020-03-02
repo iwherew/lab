@@ -236,11 +236,11 @@
         }, 2000);
       },
       goToDetail(id){
-        let routeData = this.$router.resolve({ path: '/notice/articleDetail' ,query:{id:id}});
+        let routeData = this.$router.resolve({ path: '/article/articleDetail' ,query:{id:id}});
         window.open(routeData.href, '_blank');
       },
       goToNoticeEdit(){
-        this.$router.push('/notice/articleEdit')
+        this.$router.push('/article/articleEdit')
       }
     },
     mounted() {

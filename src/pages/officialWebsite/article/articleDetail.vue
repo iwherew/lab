@@ -154,10 +154,10 @@
         $event.currentTarget.classList.remove('active');
       },
       goToDetail(id){
-        this.$router.push({path: '/notice/articleDetail', query:{id:id}})
+        this.$router.push({path: '/article/articleDetail', query:{id:id}})
       },
       goToEdit(id){
-        this.$router.push({path: '/notice/articleEdit', query:{id:this.context.id}})
+        this.$router.push({path: '/article/articleEdit', query:{id:this.context.id}})
       },
     },
     mounted() {

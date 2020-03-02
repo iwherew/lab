@@ -20,22 +20,22 @@ export default new Router({
         },
         {
           path: 'notice',
+          meta: {title: '通知公告'},
           component: resolve => require(['../pages/officialWebsite/Notice/Notice'], resolve),
+        },
+        {
+          path: 'article',
+          component: resolve => require(['../pages/officialWebsite/article/article'], resolve),
           children: [
-            {
-              path: '',
-              meta: {title: '通知公告'},
-              component: resolve => require(['../pages/officialWebsite/common/articleLists'], resolve),
-            },
             {
               path: 'articleDetail',
               meta: {title: '文章详情'},
-              component: resolve => require(['../pages/officialWebsite/common/articleDetail'], resolve),
+              component: resolve => require(['../pages/officialWebsite/article/articleDetail'], resolve),
             },
             {
               path: 'articleEdit',
               meta: {title: '文章编辑'},
-              component: resolve => require(['../pages/officialWebsite/common/articleEdit'], resolve),
+              component: resolve => require(['../pages/officialWebsite/article/articleEdit'], resolve),
             },
           ]
         },
@@ -56,5 +56,10 @@ export default new Router({
         },
       ]
     },
-  ]
+  ],
 })
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
